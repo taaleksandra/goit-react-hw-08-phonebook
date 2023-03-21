@@ -1,17 +1,18 @@
-import React, { Children } from 'react';
-import { Outlet } from 'react-router-dom';
+import React from 'react';
+import clsx from 'clsx';
+
+import css from '../Layout/Layout.module.css';
 
 import { UserMenu } from 'components/UserMenu/UserMenu';
+import { Outlet } from 'react-router-dom';
 
-export const Layout = ({ children }) => {
+export const Layout = () => {
   return (
     <main>
-      <nav>
-        <button>Sign in</button>
-        <button>Sign up</button>
+      <nav className={clsx(css.navBox)}>
         <UserMenu />
       </nav>
-      {children}
+      <Outlet />
     </main>
   );
 };
