@@ -27,7 +27,6 @@ export const UserMenu = () => {
       {isAuthorized && (
         <>
           <p>{user.name}</p>
-          <button onClick={() => navigate('contacts')}>Contacts</button>
           <button onClick={handleLogOut}>Logout</button>
         </>
       )}

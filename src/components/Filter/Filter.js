@@ -4,7 +4,7 @@ import clsx from 'clsx';
 
 import css from '../Filter/Filter.module.css';
 
-import { filterContact } from 'redux/filterSlice';
+import { filterContact } from 'redux/contacts/filterSlice';
 
 export const Filter = () => {
   const dispatch = useDispatch();

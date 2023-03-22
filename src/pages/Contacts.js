@@ -4,8 +4,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import clsx from 'clsx';
 import css from '../pages/Contacts.module.css';
 
-import { selectErrorContacts, selectisLoadingContacts } from 'redux/selectors';
-import { fetchContacts } from 'redux/operations';
+import {
+  selectErrorContacts,
+  selectisLoadingContacts,
+} from 'redux/contacts/selectors';
+import { fetchContacts } from 'redux/contacts/operations';
 
 import { ContactForm } from '../components/ContactForm/ContactForm';
 import { ContactList } from '../components/ContactList/ContactList';

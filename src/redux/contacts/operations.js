@@ -10,7 +10,6 @@ export const fetchContacts = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const { contacts } = thunkAPI.getState();
-      console.log(contacts.contacts);
       if (contacts.length !== 0) return contacts.contacts;
 
       const response = await axios.get('/contacts');

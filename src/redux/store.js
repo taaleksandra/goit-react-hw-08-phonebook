@@ -11,8 +11,8 @@ import {
 import persistReducer from 'redux-persist/es/persistReducer';
 import storage from 'redux-persist/lib/storage';
 
-import { contactsReducer } from './contactsSlice';
-import { filterReducer } from './filterSlice';
+import { contactsReducer } from './contacts/contactsSlice';
+import { filterReducer } from './contacts/filterSlice';
 import { authReducer } from './auth/authSlice';
 
 const contactsPersistConfig = {
@@ -24,7 +24,7 @@ const contactsPersistConfig = {
 const authPersistConfig = {
   key: 'auth',
   storage,
-  whitelist: ['token', 'user', 'isLoggedIn'],
+  whitelist: ['token'],
 };
 
 export const store = configureStore({
