@@ -1,6 +1,9 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
+import clsx from 'clsx';
+import css from '../Register/Register.module.css';
+
 import { signIn } from 'redux/auth/authOperations';
 
 export const SignIn = () => {
@@ -20,19 +23,25 @@ export const SignIn = () => {
   };
 
   return (
-    <>
+    <div className={clsx(css.box)}>
       <h2>Sign in to see your contacts</h2>
-      <form onSubmit={handleSubmit} autoComplete="off">
+      <form
+        className={clsx(css.formBox)}
+        onSubmit={handleSubmit}
+        autoComplete="off"
+      >
         <label>
           Email
-          <input type="email" name="email" />
+          <input className={clsx(css.input)} type="email" name="email" />
         </label>
         <label>
           Password
-          <input type="password" name="password" />
+          <input className={clsx(css.input)} type="password" name="password" />
         </label>
-        <button type="submit">Log In</button>
+        <button className={clsx(css.btn)} type="submit">
+          Log In
+        </button>
       </form>
-    </>
+    </div>
   );
 };

@@ -2,6 +2,10 @@ import { useAuth } from 'hook/useAuth/useAuth';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+
+import clsx from 'clsx';
+import css from '../UserMenu/UserMenu.module.css';
+
 import { signOut } from 'redux/auth/authOperations';
 import { selectUser } from 'redux/auth/authSelectors';
 
@@ -19,15 +23,24 @@ export const UserMenu = () => {
     <>
       {!isAuthorized && (
         <>
-          <button onClick={() => navigate('sign-in')}>Sign in</button>
-          <button onClick={() => navigate('register')}>Sign up</button>
+          <button className={clsx(css.btn)} onClick={() => navigate('sign-in')}>
+            Sign in
+          </button>
+          <button
+            className={clsx(css.btn)}
+            onClick={() => navigate('register')}
+          >
+            Sign up
+          </button>
         </>
       )}
 
       {isAuthorized && (
         <>
-          <p>{user.name}</p>
-          <button onClick={handleLogOut}>Logout</button>
+          <p className={clsx(css.userName)}>{user.name}</p>
+          <button className={clsx(css.btn)} onClick={handleLogOut}>
+            Logout
+          </button>
         </>
       )}
     </>

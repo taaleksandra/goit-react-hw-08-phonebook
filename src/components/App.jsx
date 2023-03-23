@@ -2,8 +2,9 @@ import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import { Layout } from './Layout/Layout';
+import { Home } from 'pages/Home/Home';
 import { SignIn } from 'pages/SignIn/SignIn';
-import { Contacts } from 'pages/Contacts';
+import { Contacts } from 'pages/Contacts/Contacts';
 import { Register } from 'pages/Register/Register';
 import { useDispatch } from 'react-redux';
 import { refreshUser } from 'redux/auth/authOperations';
@@ -24,6 +25,7 @@ export const App = () => {
   ) : (
     <Routes>
       <Route path="/" element={<Layout />}>
+        <Route index element={<RestrictedRoute component={<Home />} />} />
         <Route
           path="/register"
           element={<RestrictedRoute component={<Register />} />}

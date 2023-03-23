@@ -1,6 +1,9 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
+import clsx from 'clsx';
+import css from '../Register/Register.module.css';
+
 import { register } from 'redux/auth/authOperations';
 
 export const Register = () => {
@@ -20,23 +23,29 @@ export const Register = () => {
   };
 
   return (
-    <>
+    <div className={clsx(css.box)}>
       <h2>Sign up to create your phonebook</h2>
-      <form onSubmit={handleSubmit} autoComplete="off">
+      <form
+        className={clsx(css.formBox)}
+        onSubmit={handleSubmit}
+        autoComplete="off"
+      >
         <label>
           Username
-          <input type="text" name="name" />
+          <input className={clsx(css.input)} type="text" name="name" />
         </label>
         <label>
           Email
-          <input type="email" name="email" />
+          <input className={clsx(css.input)} type="email" name="email" />
         </label>
         <label>
           Password
-          <input type="password" name="password" />
+          <input className={clsx(css.input)} type="password" name="password" />
         </label>
-        <button type="submit">Register</button>
+        <button className={clsx(css.btn)} type="submit">
+          Register
+        </button>
       </form>
-    </>
+    </div>
   );
 };

@@ -15,7 +15,7 @@ export const ContactList = () => {
   };
 
   return (
-    <ul>
+    <ul className={clsx(css.list)}>
       {contacts.map(contact => (
         <li key={contact.id} className={clsx(css.contact)}>
           <span>
@@ -25,7 +25,7 @@ export const ContactList = () => {
             id={contact.id}
             type="button"
             onClick={handleDelete}
-            className={clsx(css.deleteBtn)}
+            className={clsx(css.btn)}
           >
             Delete
           </button>

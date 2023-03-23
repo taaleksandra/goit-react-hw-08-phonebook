@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import clsx from 'clsx';
-import css from '../pages/Contacts.module.css';
+import css from '../Contacts/Contacts.module.css';
 
 import {
   selectErrorContacts,
@@ -10,10 +10,10 @@ import {
 } from 'redux/contacts/selectors';
 import { fetchContacts } from 'redux/contacts/operations';
 
-import { ContactForm } from '../components/ContactForm/ContactForm';
-import { ContactList } from '../components/ContactList/ContactList';
-import { Filter } from '../components/Filter/Filter';
-import { Loader } from '../components/Loader/Loader';
+import { ContactForm } from '../../components/ContactForm/ContactForm';
+import { ContactList } from '../../components/ContactList/ContactList';
+import { Filter } from '../../components/Filter/Filter';
+import { Loader } from '../../components/Loader/Loader';
 
 export const Contacts = () => {
   const dispatch = useDispatch();
